@@ -27,7 +27,7 @@ var hours = [['Monday - 11:30 AM – Midnight','Tuesday - 11:30 AM – Midnight'
 ['M-Th: 11:30 a.m. – midnight', 'Fri: 11:30 a.m. – 1:00 a.m.', 'Sat: 10:00 a.m. – 1:00 a.m.', 'Sun: 10:00 a.m. – midnight'], 
 ['Monday & Tuesday 5:30pm - 11:00pm', 'Wednesday & Thursday 5:30pm - 12:00am', 'Friday & Saturday 5:00pm - 1:00am', 'Sunday 5:00pm - 11:00pm'],
 ['Sunday – Wednesday: 5pm – 12am', 'Thursday – Saturday: 5pm – 2am', 'Last dinner reservations at 11:45am (Sun - Wed) and 1:45am (Thu - Sat).', 'Restaurant Bar remains open at least one hour after the kitchen closes.']]
-var phone_number_area_code = ['212', '646'];
+var phone_number_area_code = ['(212) ', '(646) '];
 var payment_options = [['AMEX', 'Carte Blanche', 'Diners Club', 'Discover', 'MasterCard', 'Pay with OpenTable', 'Visa'], ['AMEX', 'Carte Blanche', 'Diners Club', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'Diners Club', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'MasterCard', 'Visa']];
 var dress_code = ['Smart Casual', 'Business Casual', 'Casual Dress'];
 var private_party_facilities = ['Available for parties with 15 to 250 guests.', 'Private dining with bar for 45 seated guests, 60 standing. Private dining for 60 seated guests, 100 standing. Exclusive private dining for 300 seated guests, 550 standing.'];
@@ -43,10 +43,9 @@ app.use(body.json());
 
 const authstr = 'Bearer '.concat(config.API_KEY);
 
-
-var aggregate_score = Math.floor(Math.random() * 6);
-var price_random = Math.floor(Math.random() * price_symbol.length);
-var price_choice = price_symbols[Math.floor(Math.random() * price_symbol.length)];
+var aggregate_score = Math.random() * (5 - 3) + 3;
+var price_random = Math.floor(Math.random() * price_symbols.length);
+var price_choice = price_symbols[Math.floor(Math.random() * price_symbols.length)];
 var cuisine_random = Math.floor(Math.random() * cuisines.length);
 var cuisine_choice = cuisines[cuisine_random];
 var tag_random = Math.floor(Math.random() * tagData.length)
@@ -152,38 +151,76 @@ app.post('/business', function(req, res) {
       info.website = 'http://www.' + business.name.replace(" ", "") + '.com';
       // console.log('info is', info);
       // model.save(info);
-      var child = new db.Overview({
+      var newOverview = new db.Overview({
         OverviewChildSchema: info,
-        aggregate_score: Math.floor(Math.random() * 6),
-        price_quantile: price_symbols[Math.floor(Math.random() * price_symbol.length)],
-        cuisine: cuisines[Math.floor(Math.random() * cuisines.length)],
-        tags: tagData[Math.floor(Math.random() * tagData.length)],
-        description: String,
-        private_dining: Boolean,
-        dining_style: String,
-        hours: String,
-        payment_options: Array,
-        dress_code: String,
-        executive_chef: String,
-        catering: String,
-        private_party_facilities: String,
-        private_party_contact_name: String,
-        private_party_contact_number: String,
-        coordinates: Object,
-        neighborhood: String,
-        cross_street: String,
-        parking_details: String,
-        public_transit: String,
-        entertainment: String,
-        special_events_promotions: String,
-        additional: String,
-        private_dining_details: String
+        aggregate_score: Math.random() * (5 - 3) + 3,
+        price_quantile: price_symbols[Math.floor(Math.random() * price_symbols.length)],
+        cuisine: [cuisines[Math.floor(Math.random() * cuisines.length)],cuisines[Math.floor(Math.random() * cuisines.length)]],
+        tags: [tagData[Math.floor(Math.random() * tagData.length)], tagData[Math.floor(Math.random() * tagData.length)], tagData[Math.floor(Math.random() * tagData.length)]],
+        description: loremIpsum({
+          count: 2,
+          units: 'paragraphs',
+          sentenceLowerBound: 5,
+          sentenceUpperBound: 15,
+          paragraphLowerBound: 3,
+          paragraphUpperBound: 7,
+          format: 'plain'
+        }),
+        private_dining: private_dining[Math.floor(Math.random() * private_dining.length)],
+        dining_style: dining_style[Math.floor(Math.random() * dining_style.length)],
+        hours: hours[Math.floor(Math.random() * hours.length)],
+        payment_options: payment_options[Math.floor(Math.random() * payment_options.length)],
+        dress_code: dress_code[Math.floor(Math.random() * dress_code.length)],
+        executive_chef: executive_chef[Math.floor(Math.random() * executive_chef.length)],
+        catering: loremIpsum({
+          count: 2,
+          units: 'paragraphs',
+          sentenceLowerBound: 5,
+          sentenceUpperBound: 15,
+          paragraphLowerBound: 1,
+          paragraphUpperBound: 2,
+          format: 'plain'
+        }),
+        private_party_facilities: private_party_facilities[Math.floor(Math.random() * private_party_facilities.length)],
+        private_party_contact_name: private_party_contact_name[Math.floor(Math.random() * private_party_contact_name.length)],
+        private_party_contact_number: phone_number_area_code[Math.floor(Math.random() * phone_number_area_code.length)] + phoneNumberData[Math.floor(Math.random() * phoneNumberData.length)],
+        neighborhood: neighborhoodData[Math.floor(Math.random() * neighborhoodData.length)],
+        cross_street: cross_street[Math.floor(Math.random() * cross_street.length)],
+        parking_details: parking_details[Math.floor(Math.random() * parking_details.length)],
+        public_transit: public_transit[Math.floor(Math.random() * public_transit.length)],
+        entertainment: loremIpsum({
+          count: 1,
+          units: 'sentences',
+          sentenceLowerBound: 10,
+          sentenceUpperBound: 20,
+          format: 'plain'
+        }),
+        special_events_promotions: loremIpsum({
+          count: 2,
+          units: 'paragraphs',
+          sentenceLowerBound: 5,
+          sentenceUpperBound: 15,
+          paragraphLowerBound: 1,
+          paragraphUpperBound: 3,
+          format: 'plain'
+        }),
+        additional: additional[Math.floor(Math.random() * additional.length)],
+        private_dining_details: loremIpsum({
+          count: 1,
+          units: 'paragraphs',
+          sentenceLowerBound: 5,
+          sentenceUpperBound: 10,
+          paragraphLowerBound: 1,
+          paragraphUpperBound: 3,
+          format: 'plain'
+        })
       })
-      child.save((err) => {
+      newOverview.save((err) => {
         if (err) {
           console.log(err);
         }
       })
+      // console.log('data is saved!')
       // allBusinesses.push(info);
     })
   })

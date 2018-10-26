@@ -105,7 +105,7 @@ var generateData = function(object) {
     var newNumber = object[i].phone_number.slice(6, 9) + '-' + object[i].phone_number.slice(9, 13)
     newArray.push(newNumber);
   }
-  console.log(newArray);
+  return newArray;
 }
 
 module.exports = generateData(data);
