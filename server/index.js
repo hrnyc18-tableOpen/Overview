@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 const overviewRoutes = require('./routes/overviewRoutes.js');
 
-app.use('/overview', overviewRoutes);
+app.use('/restaurants', overviewRoutes);
 
 app.listen(3010, function() {
   console.log('listening on port 3010!')

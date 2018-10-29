@@ -3,7 +3,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 mongoose.connect('mongodb://localhost/test', function(){
   /* Drop the DB */
-  mongoose.connection.db.dropDatabase();
+  // mongoose.connection.db.dropDatabase();
 });
 
 mongoose.connect('mongodb://localhost/test')

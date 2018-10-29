@@ -3,7 +3,7 @@ var router = express.Router();
 
 var overviewController = require('../controllers/overviewController.js');
 
-router.get('/overview/*', overviewController.get);
-router.get('/getRestaurant', overviewController.getRestaurant);
+router.get('/:id', overviewController.getRestaurant);
+router.get('/*', overviewController.get);
 
 module.exports = router;

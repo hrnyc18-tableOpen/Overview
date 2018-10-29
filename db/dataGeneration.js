@@ -7,7 +7,7 @@ var axios = require('axios');
 var config = require('../config.js');
 var db = require('../db/index.js');
 
-var price_symbols = ['$$', '$$$', '$$$$'];
+var price_symbols = ['$30 and under', '$31 to $50', '$50 and over'];
 var cuisines = ['American', 'Italian', 'Steakhouse', 'Seafood', 'French', 'Indian', 'Mexican', 'Japanese', 'British', 'Chinese', 'German', 'Spanish', 
 'Pizzeria', 'Fusion / Eclectic', 'Barbecue', 'Greek', 'Tapas / Small Plates', 'Grill', 'Comfort Food', 'Turkish', 'Irish', 'Argentinean', 'Afternoon Tea',
 'Portuguese', 'Burgers', 'Brazilian', 'Korean', 'Australian', 'Cuban', 'Organic', 'Austrian', 'Russian', 'Vegetarian / Vegan', 'Belgian', 'Breakfast', 'Dessert',
