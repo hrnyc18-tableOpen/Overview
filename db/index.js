@@ -34,7 +34,7 @@ const OverviewSchema = new Schema({
   description: String, // 
   private_dining: Boolean, // 
   dining_style: String, //
-  hours: String, //
+  hours: Array, //
   payment_options: Array, // 
   dress_code: String, //
   executive_chef: String, //

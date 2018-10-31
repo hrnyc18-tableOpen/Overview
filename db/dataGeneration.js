@@ -23,8 +23,8 @@ var hours = [['Monday - 11:30 AM – Midnight','Tuesday - 11:30 AM – Midnight'
 ['Monday & Tuesday 5:30pm - 11:00pm', 'Wednesday & Thursday 5:30pm - 12:00am', 'Friday & Saturday 5:00pm - 1:00am', 'Sunday 5:00pm - 11:00pm'],
 ['Sunday – Wednesday: 5pm – 12am', 'Thursday – Saturday: 5pm – 2am', 'Last dinner reservations at 11:45am (Sun - Wed) and 1:45am (Thu - Sat).', 'Restaurant Bar remains open at least one hour after the kitchen closes.']]
 var phone_number_area_code = ['(212) ', '(646) '];
-var payment_options = [['AMEX', 'Carte Blanche', 'Diners Club', 'Discover', 'MasterCard', 'Pay with OpenTable', 'Visa'], ['AMEX', 'Carte Blanche', 'Diners Club', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'Diners Club', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'Discover', 'MasterCard', 'Visa'], ['AMEX', 'MasterCard', 'Visa']];
-var dress_code = ['Smart Casual', 'Business Casual', 'Casual Dress'];
+var payment_options = [['AMEX, Carte Blanche, Diners Club, Discover, MasterCard, Pay with OpenTable, Visa'], ['AMEX, Carte Blanche, Diners Club, Discover, MasterCard, Visa'], ['AMEX, Diners Club, Discover, MasterCard, Visa'], ['AMEX, Discover, MasterCard, Visa'], ['AMEX, MasterCard, Visa']];
+var dress_code = ['Smart Casual', 'Business Casual', 'Casual Dress']
 var executive_chef = nameData.slice(0, 100)
 var private_party_facilities = ['Available for parties with 15 to 250 guests.', 'Private dining with bar for 45 seated guests, 60 standing. Private dining for 60 seated guests, 100 standing. Exclusive private dining for 300 seated guests, 550 standing.'];
 var private_party_contact_name = nameData.slice(100, 200);
