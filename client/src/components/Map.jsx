@@ -1,6 +1,6 @@
 import React from 'react';
 import MyMapComponent from './Marker.jsx';
-import API_KEY from '../../../config.js';
+import config from '../../../config.js';
 
 class Map extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Map extends React.Component {
           isMarkerShown
           location={this.state.center}
           zoom={this.state.zoom}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${API_KEY.API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${config.GOOGLE_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `19vh`, width: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />} 

@@ -36,7 +36,7 @@ var additional = ['Banquet, Bar Dining, Bar/Lounge, Beer, BYO Wine, Chef\'s Tabl
 // var name_values = []; // from yelp API
 // var review_count // yelp
 
-const authstr = 'Bearer '.concat(config.API_KEY);
+const authstr = 'Bearer '.concat(config.YELP_API_KEY);
 
 axios.get('https://api.yelp.com/v3/businesses/search', {
   params: {
