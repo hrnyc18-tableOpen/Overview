@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 
-mongoose.connect('mongodb://localhost/test', function(){
-  /* Drop the DB */
-  // mongoose.connection.db.dropDatabase();
-});
-
-mongoose.connect('mongodb://localhost/test')
+mongoose.connect('mongodb://maria:0237100t@ds147073.mlab.com:47073/tableopen') //hosted version from mlab
 
 const db = mongoose.connection;
 autoIncrement.initialize(db);

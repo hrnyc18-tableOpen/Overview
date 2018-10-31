@@ -5,7 +5,7 @@ var DIST_DIR = path.join(__dirname, '/client/dist');
 module.exports = {
   mode: 'development',
   entry: {
-    app: ['babel-polyfill', `${SRC_DIR}/index.jsx`]
+    app: ['babel-polyfill', `${SRC_DIR}/app.js`]
   },
   output: {
     filename: 'bundle.js',
