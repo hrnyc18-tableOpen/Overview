@@ -1,9 +1,7 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
-import Marker from './Marker.jsx'
- 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+import MyMapComponent from './Marker.jsx';
+import API_KEY from '../../../config.js';
+
 class Map extends React.Component {
   constructor(props) {
     super(props)
@@ -21,17 +19,19 @@ class Map extends React.Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '20vh', width: '90%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyC2QaY-vYXNOi7fXEW0m1Ux3ZLDw5osvhk' }}
-          defaultCenter={this.state.center}
-          defaultZoom={this.state.zoom}
-        >
-          <Marker lat={this.state.center.lat} lng={this.state.center.lng} text={'abc'}/>
-        </GoogleMapReact>
+      <div style={{ height: '20vh', width: '90%' }} id="map">
+        <MyMapComponent
+          isMarkerShown
+          location={this.state.center}
+          zoom={this.state.zoom}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${API_KEY.API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `19vh`, width: `100%` }} />}
+          mapElement={<div style={{ height: `100%` }} />} 
+        />
       </div>
     );
   }
 }
- 
+
 export default Map;

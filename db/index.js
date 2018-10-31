@@ -18,7 +18,7 @@ mongoose.set('useCreateIndex', true)
 const OverviewChildSchema = new Schema({
   name: {type: String, required: true}, //
   review_count: Number, //
-  display_address: String, //
+  display_address: Array, //
   display_phone: String, //
   coordinates: Object, //
   website: String //

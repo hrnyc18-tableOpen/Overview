@@ -1,23 +1,14 @@
 import React from 'react';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle } from 'react-google-maps';
 
-const Marker = (props) => (
-  <img id='marker' src="http://media.otstatic.com/img/map-marker-blue-1e9959e1eab6a1311c5bc48b4086b596.png" style={{
-    display: 'inline-flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center'}}></img>
-)
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+  <GoogleMap
+    defaultZoom={props.zoom}
+    defaultCenter={props.location}
+  >
+    {props.isMarkerShown && <Marker icon="http://media.otstatic.com/img/map-marker-blue-1e9959e1eab6a1311c5bc48b4086b596.png" position={props.location}/>}
 
-export default Marker
+  </GoogleMap>
+))
 
-// style={{
-//   color: 'white', 
-//   background: 'grey',
-//   padding: '15px 10px',
-//   display: 'inline-flex',
-//   textAlign: 'center',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   borderRadius: '100%',
-//   transform: 'translate(-50%, -50%)'
-// }}
+export default MyMapComponent;

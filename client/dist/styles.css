@@ -1,10 +1,16 @@
+#app {
+  font-family: BrandonText, -apple-system, system-ui, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
 .row {
   display: flex;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+  margin-bottom: 16px;
   position: relative;
-  font-family: BlinkMacSystemFont;
 }
 
 .column1 {
@@ -23,7 +29,6 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  font-family: BlinkMacSystemFont;
 }
 
 .header {
@@ -31,26 +36,74 @@
   font-weight: 500;
   line-height: 1.43;
   font-size: 0.875rem;
-  font-family: BlinkMacSystemFont;
 }
 
-#description {
-  line-height: 24px;
-  font-weight: 500;
-  max-height: calc(3 * 24px);
-  text-overflow: ellipsis;
+#descriptionSection {
+  color: rgb(45, 51, 63);
   display: block;
+  height: 91px;
+  margin-bottom: 32px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-size-adjust: 100%;
+  width: 608px;
+  -webkit-font-smoothing: antialiased;
   position: relative;
+}
+
+#descriptionReadTrue {
+  color: rgb(45, 51, 63);
   display: inline-block;
-  font-family: BlinkMacSystemFont;
+  height: 70px;
+  line-height: 24px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  max-height: 72px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-overflow: ellipsis;
+  text-size-adjust: 100%;
+  width: 608px;
+  -webkit-box-orient: vertical;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-clamp: 3;
+}
+
+#descriptionReadFalse {
+  color: rgb(45, 51, 63);
+  display: inline-block;
+  height: 168px;
+  line-height: 24px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-size-adjust: 100%;
+  width: 608px;
+  -webkit-font-smoothing: antialiased;
 }
 
 #ulTag {
   list-style: none;
-  padding: 0;
+  padding-top: 16px;
+  margin-bottom: 24px;
   /* margin: 0 0 0 0.5rem; */
   display: flex;
-  font-family: BlinkMacSystemFont;
 }
 
 .liTag {
@@ -68,6 +121,8 @@
   padding: 0.5rem 1rem;
   text-transform: capitalize;
   display: inline-block;
+  cursor: pointer;
+  margin: 0.5px;
 }
 
 .aTag {
@@ -76,6 +131,7 @@
 
 .divTag:hover {
   border: 1.5px solid #da3743;
+  margin: 0;
 }
 
 #tag {
@@ -86,6 +142,7 @@
 .container {
   max-width: 608px;
   margin: auto;
+  position: relative;
 }
 
 .hyperlink {
@@ -93,7 +150,13 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+  text-size-adjust: 100%;
   cursor: pointer;
+  line-height: 20px;
+  padding-bottom: 4px;
+  padding-left: 0px;
+  padding-right: 16px;
+  padding-top: 4px;
 }
 
 #tagButtons {
@@ -103,15 +166,33 @@
   margin: 0px 0px 0px 0.5rem;
 }
 
+#section {
+  margin-top: 32px;
+}
+
 .sectionName {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }
+
 .sectionDescription {
   font-size: 14px;
   font-weight: 400;
+  height: 20px;
   line-height: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-size-adjust: 100%;
+  width: 88.6562px;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
 }
 
 #privateDining {
@@ -211,7 +292,6 @@
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px;
-  position: absolute;
   text-align: center;
   text-size-adjust: 100%;
   width: 608px;
@@ -219,15 +299,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-#reviewIcon {
-  background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg);
-  background-position-x: 50%;
-  background-position-y: 50%;
-  display: block;
-  font-family: roboto;
-  font-size: 14px;
-  height: 24px;
-  /* text-size-adjust: 100%; */
-  width: 24px;
-  -webkit-font-smoothing: antialiased;
+.topBar {
+  padding-left: 5px;
+  padding-right: 15px;
+}
+
+#map {
+  margin-bottom: 16px;
 }
