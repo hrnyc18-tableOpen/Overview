@@ -878,14 +878,12 @@ class App extends React.Component {
                       <span className="sectionName">
                         Private party facilities
                       </span>
-                      <br />
+                      < br />
                       <span className="sectionDescription">
                         {this.state.restaurant.private_party_facilities}
                       </span>
-                      <br />
                     </div>
                   </div>
-                  <br />
                   <div className="row">
                     <div className="column2">
                       <svg
@@ -2468,10 +2466,8 @@ class App extends React.Component {
                       <span className="sectionDescription">
                         {this.state.restaurant.private_party_facilities}
                       </span>
-                      <br />
                     </div>
                   </div>
-                  <br />
                   <div className="row">
                     <div className="column2">
                       <svg
