@@ -6,7 +6,7 @@ var model = require('./models/overviewModel.js');
 var path = require('path')
 var compression = require('compression')
 
-app.use(compression);
+app.use(compression());
 app.use(body.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
