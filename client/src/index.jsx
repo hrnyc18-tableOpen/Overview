@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import Rating from "./components/Rating.jsx";
 import Description from "./components/Description.jsx";
-import Map from "./components/Map.jsx";
 import DetailsWithPrivateDining from "./components/DetailsWithPrivateDining.jsx";
 import Details from "./components/Details.jsx";
 
@@ -25,8 +24,6 @@ class App extends React.Component {
     axios
       .get(`/api/${id}`)
       .then(({ data }) => {
-        // console.log('restaurant data', data[0])
-        // console.log(data[0].OverviewChildSchema)
         this.setState({
           restaurant: data[0]
         });
@@ -176,9 +173,9 @@ class App extends React.Component {
             </div>
             <div id="ulTag">
               <span id="tag">Top Tags:</span>
-              {this.state.restaurant.tags.map(tag => {
+              {this.state.restaurant.tags.map((tag, index) => {
                 return (
-                  <li className="liTag">
+                  <li className="liTag" key={index}>
                     <div className="divTag">
                       <a className="aTag">{tag}</a>
                     </div>
@@ -333,9 +330,9 @@ class App extends React.Component {
             </div>
             <div id="ulTag">
               <span id="tag">Top Tags:</span>
-              {this.state.restaurant.tags.map(tag => {
+              {this.state.restaurant.tags.map((tag, index) => {
                 return (
-                  <li className="liTag">
+                  <li className="liTag" key={index}>
                     <div className="divTag">
                       <a className="aTag">{tag}</a>
                     </div>
@@ -347,7 +344,7 @@ class App extends React.Component {
               <Description description={this.state.restaurant.description} />
             </div>
             <div>
-              <Details restaurant={this.state.restaurant}/>
+              <Details restaurant={this.state.restaurant} />
             </div>
           </div>
         );
@@ -359,5 +356,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// ReactDOM.render(<App />, document.getElementById("app"));

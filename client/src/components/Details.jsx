@@ -4,21 +4,21 @@ import Map from "./Map.jsx";
 class Details extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       readDetails: false
-    }
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState({
       readDetails: true
-    })
+    });
   }
 
-  render() { 
+  render() {
     if (!this.state.readDetails) {
-      return ( 
+      return (
         <div>
           <div id="table">
             <div id="section">
@@ -125,11 +125,11 @@ class Details extends React.Component {
                           this.props.restaurant.cuisine.length - 1
                         ) {
                           return (
-                            <span className="sectionDescription">{food}</span>
+                            <span className="sectionDescription" key={index}>{food}</span>
                           );
                         }
                         return (
-                          <span className="sectionDescription">{food}, </span>
+                          <span className="sectionDescription" key={index}>{food}, </span>
                         );
                       })}
                     </div>
@@ -194,9 +194,9 @@ class Details extends React.Component {
                       <span className="sectionName">Hours of operation</span>
                       <br />
                       <span className="sectionDescription">
-                        {this.props.restaurant.hours.map(hour => {
+                        {this.props.restaurant.hours.map((hour, index) => {
                           return (
-                            <li style={{ listStyleType: "none" }}>{hour}</li>
+                            <li style={{ listStyleType: "none" }} key={index}>{hour}</li>
                           );
                         })}
                       </span>
@@ -794,9 +794,9 @@ class Details extends React.Component {
                     </div>
                     <div className="column3">
                       <div className="hyperlink">
-                        {this.props.restaurant.OverviewChildSchema.display_address.map(
-                          address => {
-                            return <span>{address} </span>;
+                        {this.props.restaurant.OverviewChildSchema.display_address.map((
+                          address, index) => {
+                            return <span key={index}>{address} </span>;
                           }
                         )}
                       </div>
@@ -1436,7 +1436,7 @@ class Details extends React.Component {
                 </div>
               </div>
             </div>
-          <div id="transparentDetails"></div>
+            <div id="transparentDetails" />
           </div>
           <div id="details">
             <button onClick={this.handleClick} id="detailsBtn">
@@ -1546,17 +1546,10 @@ class Details extends React.Component {
                   <span className="sectionName">Cuisines</span>
                   <br />
                   {this.props.restaurant.cuisine.map((food, index) => {
-                    if (
-                      index ===
-                      this.props.restaurant.cuisine.length - 1
-                    ) {
-                      return (
-                        <span className="sectionDescription">{food}</span>
-                      );
+                    if (index === this.props.restaurant.cuisine.length - 1) {
+                      return <span className="sectionDescription" key={index}>{food}</span>;
                     }
-                    return (
-                      <span className="sectionDescription">{food}, </span>
-                    );
+                    return <span className="sectionDescription" key={index}>{food}, </span>;
                   })}
                 </div>
               </div>
@@ -1579,13 +1572,7 @@ class Details extends React.Component {
                       fillRule="evenodd"
                     >
                       <g id="icon/ic_clock">
-                        <rect
-                          id="boundry"
-                          x="0"
-                          y="0"
-                          width="24"
-                          height="24"
-                        />
+                        <rect id="boundry" x="0" y="0" width="24" height="24" />
                         <circle
                           id="Oval"
                           stroke="#333333"
@@ -1620,10 +1607,8 @@ class Details extends React.Component {
                   <span className="sectionName">Hours of operation</span>
                   <br />
                   <span className="sectionDescription">
-                    {this.props.restaurant.hours.map(hour => {
-                      return (
-                        <li style={{ listStyleType: "none" }}>{hour}</li>
-                      );
+                    {this.props.restaurant.hours.map((hour, index) => {
+                      return <li style={{ listStyleType: "none" }} key={index}>{hour}</li>;
                     })}
                   </span>
                 </div>
@@ -1671,10 +1656,7 @@ class Details extends React.Component {
                   <span className="sectionName">Phone number</span>
                   <br />
                   <span className="sectionDescription">
-                    {
-                      this.props.restaurant.OverviewChildSchema
-                        .display_phone
-                    }
+                    {this.props.restaurant.OverviewChildSchema.display_phone}
                   </span>
                   <br />
                 </div>
@@ -1857,11 +1839,7 @@ class Details extends React.Component {
                       fill="none"
                       fillRule="evenodd"
                     >
-                      <g
-                        id="icon/ic_chef"
-                        fillRule="nonzero"
-                        fill="#333333"
-                      >
+                      <g id="icon/ic_chef" fillRule="nonzero" fill="#333333">
                         <g
                           id="ic_chef"
                           transform="translate(3.000000, 3.000000)"
@@ -2044,9 +2022,7 @@ class Details extends React.Component {
                   </svg>
                 </div>
                 <div className="column3">
-                  <span className="sectionName">
-                    Private party facilities
-                  </span>
+                  <span className="sectionName">Private party facilities</span>
                   <br />
                   <span className="sectionDescription">
                     {this.props.restaurant.private_party_facilities}
@@ -2166,8 +2142,7 @@ class Details extends React.Component {
             <div className="column1">
               <Map
                 latitude={
-                  this.props.restaurant.OverviewChildSchema.coordinates
-                    .latitude
+                  this.props.restaurant.OverviewChildSchema.coordinates.latitude
                 }
                 longitude={
                   this.props.restaurant.OverviewChildSchema.coordinates
@@ -2220,9 +2195,9 @@ class Details extends React.Component {
                 </div>
                 <div className="column3">
                   <div className="hyperlink">
-                    {this.props.restaurant.OverviewChildSchema.display_address.map(
-                      address => {
-                        return <span>{address} </span>;
+                    {this.props.restaurant.OverviewChildSchema.display_address.map((
+                      address, index) => {
+                        return <span key={index}>{address} </span>;
                       }
                     )}
                   </div>
@@ -2489,13 +2464,7 @@ class Details extends React.Component {
                       fillRule="evenodd"
                     >
                       <g id="icon/ic_parking_details">
-                        <rect
-                          id="boundry"
-                          x="0"
-                          y="0"
-                          width="24"
-                          height="24"
-                        />
+                        <rect id="boundry" x="0" y="0" width="24" height="24" />
                         <circle
                           id="Oval"
                           stroke="#333333"
@@ -2862,7 +2831,7 @@ class Details extends React.Component {
             </div>
           </div>
         </div>
-      )
+      );
     }
   }
 }
