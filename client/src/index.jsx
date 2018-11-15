@@ -34,13 +34,13 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.restaurant.OverviewChildSchema) {
+    if (this.state.restaurant.OverviewSchema) {
       if (this.state.restaurant.private_dining) {
         return (
           <div className="container">
             <div>
               <h1 id="name">
-                {this.state.restaurant.OverviewChildSchema.name}
+                {this.state.restaurant.OverviewSchema.name}
               </h1>
               <hr />
             </div>
@@ -51,7 +51,7 @@ class App extends React.Component {
               </span>
               <i className="far fa-comment-alt fa-lg fa-flip-horizontal" />
               <span className="topBar">
-                {this.state.restaurant.OverviewChildSchema.review_count} reviews
+                {this.state.restaurant.OverviewSchema.review_count} reviews
               </span>
               <svg
                 width="24px"
@@ -196,7 +196,7 @@ class App extends React.Component {
           <div className="container">
             <div>
               <h1 id="name">
-                {this.state.restaurant.OverviewChildSchema.name}
+                {this.state.restaurant.OverviewSchema.name}
               </h1>
               <hr />
             </div>
@@ -208,7 +208,7 @@ class App extends React.Component {
               <i className="far fa-comment-alt fa-lg fa-flip-horizontal" />
               <span className="topBar">
                 {" "}
-                {this.state.restaurant.OverviewChildSchema.review_count} reviews
+                {this.state.restaurant.OverviewSchema.review_count} reviews
               </span>
               <svg
                 width="24px"
