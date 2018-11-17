@@ -25,7 +25,7 @@ class App extends React.Component {
       .get(`/api/${id}`)
       .then(({ data }) => {
         this.setState({
-          restaurant: data[0]
+          restaurant: data.data
         });
       })
       .catch(err => {

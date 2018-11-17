@@ -46,7 +46,7 @@ var callData = () => {
   var data = '';
   var batch = 0;
 
-  while (batch < 6000) {
+  while (batch < 10000) {
     batch++
     count++
       var rest = {};
@@ -56,7 +56,6 @@ var callData = () => {
       rest.diplay_address = faker.address.streetAddress();
       rest.display_phone = faker.phone.phoneNumberFormat();
       rest.website = 'http://www.' + faker.lorem.word().replace(" ", "") + '.com';
-
       rest.aggregate_score = Math.random() * (5 - 3) + 3,
       rest.price_quantile = price_symbols[Math.floor(Math.random() * price_symbols.length)],
       rest.cuisine = [cuisines[Math.floor(Math.random() * cuisines.length)], cuisines[Math.floor(Math.random() * cuisines.length)]],
@@ -78,7 +77,6 @@ var callData = () => {
       rest.entertainment = faker.lorem.sentences(),
       rest.special_events_promotions = faker.lorem.sentences(),
       rest.additional = additional[Math.floor(Math.random() * additional.length)],
-      // result.push(rest);
       iterationCount++
     data += JSON.stringify(rest)
 
@@ -99,7 +97,7 @@ var callData = () => {
   // writeData('./rest.txt',data)
 }
 
-var stream = fs.createWriteStream(__dirname + '/rests.txt');
+var stream = fs.createWriteStream(__dirname + '/test.csv');
 
 stream.on('drain', function () {
   console.log('DRAIN called', iterationCount, count)
@@ -109,8 +107,8 @@ write();
 
 
  function write() {
-  while (iterationCount < 10000000) { // 1Gtimes
-    // str = callData()
+  while (iterationCount < 1000) { // 1Gtimes
+  
     if (!stream.write(callData())) {
       return;
     }
@@ -127,6 +125,6 @@ write();
 
 
 
-  // console.log(callData())
+ // console.log(callData())
 // writeData('./names.txt', 'hiiiiiiii', ()=> (console.log('can you please work?')))
 // writeData('./newFile.txt',callData()

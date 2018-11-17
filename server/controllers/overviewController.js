@@ -2,6 +2,7 @@ const axios = require('axios');
 const model = require('../models/overviewModel.js')
 const path = require('path');
 const db = require('../../db/index.js');
+var connection = require('../../db/postgresIndex.js')
 
 
 
@@ -12,30 +13,48 @@ module.exports = {
     // console.log(req.body)
     // res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 
-    let id = req.params.id;
+    let id = [req.params.id];
     model.get(id, (err, data) => {
       if (err) {
-        console.log(error);
+        console.log(err);
       } else {
-        res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
+        res.send(data.rows);
       }
     });
   },
 
   getRestaurant: (req, res) => {
 // console.log("THIS IS A req.params", req.params.id)
-// console.log('this is the ntype of params', typeof(parseInt(req.params.id))
+// // console.log('this is the ntype of params', typeof(parseInt(req.params.id))
 
-let id = req.params.id
-model.get(id, (err,data) => {
-  if (err){
-    console.log(error);
+let id = [req.params.id];
+console.log("ID",id)
+connection.query(`SELECT * FROM restaurants.overview WHERE rid =${id}`, (err, data) => {
+  console.log('IN CONN QUERY')
+  console.log("ID IN CONN QUERY", id)
+  // console.log("INFO IN CONN QUERY", info)
+  if (err) {
+      console.log(err);
   } else {
-    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+      // console.log("DATA",data.rows)
+      
+      res.send(data.rows);
   }
-})
-db.Overview.find()
-           .then(data => res.send(data))
+});
+
+// model.get(id, (err,data) => {
+//   // console.log('DATA',data)
+//   console.log("ID", id)
+//   if (err){
+//     console.log(err);
+//   } else {
+//     // console.log("DATA", data)
+//     // console.log("ROW DATA", data.rows)
+//     res.send(null,data.rows)
+//   }
+// })
+// db.Overview.find()
+//            .then(data => res.send(data))
 // res.send('hi')
 // db.Overview.find({rid: parseInt(req.params.id)}, (err, results) => {
 //   console.log('THESE ARE THE REQUESTS',req.params.id)
@@ -61,6 +80,8 @@ db.Overview.find()
     //     res.send(data);
     //   }
     // })
+
+    
   }
 }
 
