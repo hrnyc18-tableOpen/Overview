@@ -5,9 +5,9 @@ var phoneNumberData = require('./phone_number_data.js');
 var loremIpsum = require('lorem-ipsum');
 var axios = require('axios');
 var config = require('../config.js');
-var faker = require('faker')
+var faker = require('faker');
 var {db, Overview} = require('../db/index.js');
-var fs = require('fs')
+var fs = require('fs');
 
 // var MongoClient = require('mongodb').MongoClient; 
 // var url = 'mongodb://localhost:3010';
