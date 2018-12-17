@@ -2,7 +2,7 @@
 
 The Overview module displays descriptive information about a specific restaurant. Below is a preview of the deployed service.
 
-![Alt Text](https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif) 
+![](https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif) 
 
 ## Related Projects
 
@@ -56,13 +56,13 @@ Access the application at: http://localhost:3010/restaurants/# with # representi
 ### GET /api
 
 ```sh
-# Parameter(s)
+# parameter(s)
 id: restaurant ID
 ```
 
 ### Response example (application/json)
 
-```sh
+```js
 [ { cuisine: [ 'International', 'Middle Eastern' ],
     tags: [ 'Great for Lunch', 'Cellar', 'Mother\'s Day' ],
     hours:
