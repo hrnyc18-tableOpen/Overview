@@ -4,7 +4,7 @@ const dbConfig = require("./dbConfig.js");
 
 // To connect to local database
 mongoose.connect(
-  'mongodb://localhost/staybnb'
+  'mongodb://localhost/tableopen'
 );
 
 // To connect to MongoDB database on the cloud hosted on mLab
@@ -78,3 +78,4 @@ db.once("open", () => {
 
 module.exports.db = db;
 module.exports.Overview = Overview;
+

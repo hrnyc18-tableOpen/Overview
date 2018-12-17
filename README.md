@@ -2,7 +2,7 @@
 
 The Overview module displays descriptive information about a specific restaurant. Below is a preview of the deployed service.
 
-![](https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif) 
+![](https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif)
 
 ## Related Projects
 
@@ -18,20 +18,20 @@ The Overview module displays descriptive information about a specific restaurant
 npm install
 ```
 
-The microservice accesses data from a Mongo database that stores information about restaurants. 
+The microservice accesses data from a MongoDB database that stores information about restaurants.
 
-1) Create a database named "staybnb"
-2) Set up a `config.js` in the root directory with the following structure: 
+1. Create a database named "tableopen"
+2. Set up a `config.js` in the root directory with the following structure:
 
 ```js
-var GOOGLE_API_KEY = 'your_Google_API_key';
-var YELP_API_KEY = 'your_Yelp_API_key';
+var GOOGLE_API_KEY = "your_Google_API_key";
+var YELP_API_KEY = "your_Yelp_API_key";
 
 module.exports.GOOGLE_API_KEY = GOOGLE_API_KEY;
 module.exports.YELP_API_KEY = YELP_API_KEY;
 ```
 
-3) Run the following command in the root directory to populate it with data.
+3. Run the following command in the root directory to populate it with data.
 
 ```sh
 npm run seed
@@ -55,6 +55,8 @@ Access the application at: http://localhost:3010/restaurants/# with # representi
 
 ### GET /api
 
+Retrieve details about a restaurant.
+
 ```sh
 # parameter(s)
 id: restaurant ID
@@ -62,7 +64,7 @@ id: restaurant ID
 
 ### Response example (application/json)
 
-```js
+```text
 [ { cuisine: [ 'International', 'Middle Eastern' ],
     tags: [ 'Great for Lunch', 'Cellar', 'Mother\'s Day' ],
     hours:
