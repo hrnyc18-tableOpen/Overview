@@ -1,3 +1,3 @@
-import App from './index.jsx'
+import App from "./index.jsx";
 
 window.Overview = App;

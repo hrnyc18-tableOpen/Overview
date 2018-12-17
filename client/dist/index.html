@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      src="https://use.fontawesome.com/releases/v5.4.2/js/all.js"
+      integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="manifest" href="manifest.json" />
+  </head>
 
-<head>
-  <title>Overview</title>
-  <link rel="stylesheet" type="text/css" href="/styles.css">
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.4.2/js/all.js" integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN"
-    crossorigin="anonymous"></script>
-  <link rel="manifest" href="manifest.json" />
-</head>
-
-<body>
-  <div id="Overview"></div>
-  <script type="text/javascript" src="/bundle.js"></script>
-  <script>
-    ReactDOM.render(
-      React.createElement(Overview),
-      document.getElementById('Overview')
-    );
-  </script>
-</body>
-
+  <body>
+    <div id="Overview"></div>
+    <script type="text/javascript" src="/bundle.js"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement(Overview),
+        document.getElementById("Overview")
+      );
+    </script>
+  </body>
 </html>
