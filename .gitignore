@@ -25,3 +25,5 @@ build/
 # dist/
 
 config.js
+dbConfig.js
+package-lock.json
