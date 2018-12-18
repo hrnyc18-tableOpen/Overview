@@ -7,7 +7,7 @@ module.exports = {
   },
   getRestaurant: (req, res) => {
     model.get(req.params.id, data => {
-      res.send(data);
-    });
+      res.status(200).send(data);
+    })
   }
 };
