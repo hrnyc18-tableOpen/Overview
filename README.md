@@ -2,7 +2,9 @@
 
 The Overview module displays descriptive information about a specific restaurant. Below is a preview of the deployed service.
 
-![](https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif)
+<p align="center">
+  <img src="https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif" >
+</p>
 
 ## Related Projects
 
@@ -59,7 +61,7 @@ Retrieve details about a restaurant.
 
 ```sh
 # parameter(s)
-id: restaurant ID
+id: number
 ```
 
 ### Response example (application/json)
