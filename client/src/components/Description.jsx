@@ -1,35 +1,41 @@
-import React from 'react';
+import React from "react";
 
 class Description extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       readState: false
-    }
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState({
       readState: !this.state.readState
-    })
+    });
   }
 
-  render() { 
+  render() {
     if (this.state.readState) {
-      return ( 
+      return (
         <div>
           <div id="descriptionReadFalse">{this.props.description}</div>
-          <a className="hyperlink" onClick={this.handleClick}>- Read less</a>
+          <a className="hyperlink2" onClick={this.handleClick}>
+            - Read less
+          </a>
         </div>
       );
     } else {
       return (
         <div>
-          <div id="descriptionReadTrue">{this.props.description.slice(0, 294)}</div>
-          <a className="hyperlink" onClick={this.handleClick}>+ Read more</a>
+          <div id="descriptionReadTrue">
+            {this.props.description.slice(0, 294)}
+          </div>
+          <a className="hyperlink" onClick={this.handleClick}>
+            + Read more
+          </a>
         </div>
-      )
+      );
     }
   }
 }

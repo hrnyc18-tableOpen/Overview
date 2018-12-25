@@ -370,10 +370,7 @@ class Details extends React.Component {
                   <span className="sectionName">Cuisines</span>
                   <br />
                   {this.props.restaurant.cuisine.map((food, index) => {
-                    if (
-                      index ===
-                      this.props.restaurant.cuisine.length - 1
-                    ) {
+                    if (index === this.props.restaurant.cuisine.length - 1) {
                       return (
                         <span className="sectionDescription" key={index}>
                           {food}
@@ -414,10 +411,7 @@ class Details extends React.Component {
                   <span className="sectionName">Phone number</span>
                   <br />
                   <span className="sectionDescription">
-                    {
-                      this.props.restaurant.OverviewChildSchema
-                        .display_phone
-                    }
+                    {this.props.restaurant.OverviewChildSchema.display_phone}
                   </span>
                   <br />
                 </div>
@@ -428,9 +422,9 @@ class Details extends React.Component {
                 </div>
                 <div className="column3">
                   <div>Website</div>
-                  <a className="hyperlink" href="www.amelie.com">
+                  <a className="hyperlink" href={this.props.restaurant.OverviewChildSchema.website}>
                     <span>
-                      {this.props.restaurant.OverviewChildSchema.website}
+                      {this.props.restaurant.OverviewChildSchema.website.toLowerCase()}
                     </span>
                   </a>
                   <br />
@@ -493,9 +487,7 @@ class Details extends React.Component {
                   <SymbolPrivateParty />
                 </div>
                 <div className="column3">
-                  <span className="sectionName">
-                    Private party facilities
-                  </span>
+                  <span className="sectionName">Private party facilities</span>
                   <br />
                   <span className="sectionDescription">
                     {this.props.restaurant.private_party_facilities}
@@ -523,8 +515,7 @@ class Details extends React.Component {
             <div className="column1">
               <Map
                 latitude={
-                  this.props.restaurant.OverviewChildSchema.coordinates
-                    .latitude
+                  this.props.restaurant.OverviewChildSchema.coordinates.latitude
                 }
                 longitude={
                   this.props.restaurant.OverviewChildSchema.coordinates

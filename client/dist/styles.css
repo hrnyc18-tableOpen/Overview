@@ -152,7 +152,19 @@
   line-height: 20px;
   text-size-adjust: 100%;
   cursor: pointer;
-  line-height: 20px;
+  padding-bottom: 4px;
+  padding-left: 0px;
+  padding-right: 16px;
+  padding-top: 4px;
+}
+
+.hyperlink2 {
+  color: #da3743;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  text-size-adjust: 100%;
+  cursor: pointer;
   padding-bottom: 4px;
   padding-left: 0px;
   padding-right: 16px;

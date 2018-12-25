@@ -3,7 +3,7 @@
 The Overview module displays descriptive information about a specific restaurant. Below is a preview of the deployed service.
 
 <p align="center">
-  <img src="https://github.com/hrnyc18-tableOpen/Overview/blob/master/TableOpen_Overview.gif" >
+  <img src="https://github.com/hrnyc18-tableOpen/Overview/blob/master/tableOpenOverview.gif" >
 </p>
 
 ## Related Projects
@@ -51,7 +51,7 @@ npm run react-dev
 npm run server-dev
 ```
 
-Access the application at: http://localhost:3010/restaurants/# with # representing any number from 1 to 50. For example, access restaurant 19's information at http://localhost:3010/restaurants/19.
+Access the application at: http://localhost:3010/restaurants/# with # representing any number from 1 to 50. For example, access restaurant 26's information at http://localhost:3010/restaurants/26.
 
 ## API Specs
 
